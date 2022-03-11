@@ -1,1 +1,50 @@
 
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<form method="post">
+<input type="text" name="txtBox1">
+<input type="text" name="txtBox2">
+<input type="submit" name="Copiere" value="Copierea">
+<input type="submit" name="Sterge" value="Stergerea">
+<input type="submit" name="Redenumeste" value="Redenumirea">
+</form>
+
+<?php
+
+function copierea(){
+	$a = $_POST['txtBox1'];
+	$b = $_POST['txtBox2'];
+	copy($a, $b);
+	$a= " ";
+	$b= " ";
+}
+
+function stergerea(){
+	$a = $_POST['txtBox1'];
+	$b = $_POST['txtBox2'];
+	unlink($a);
+	unlink($b);
+	$a= " ";
+	$b= " ";
+}
+
+function redenumeste(){
+	$a = $_POST['txtBox1'];
+ 	$b = $_POST['txtBox2'];
+ 	rename($a, $b);
+ 	$a =" ";
+ 	$b =" ";
+}
+
+
+?>
+
+</body>
+</html>
